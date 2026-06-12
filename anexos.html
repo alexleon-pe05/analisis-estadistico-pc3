@@ -7,6 +7,9 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Resaltado de sintaxis para el visor de código -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -185,51 +188,43 @@ Anexo
         <h2 class="font-bold text-[#1a2a4a]" style="font-size: 20px;">Problema 1 </h2>
     </div>
 <div class="p-lg grid grid-cols-1 md:grid-cols-3 gap-lg">
-<div id="card-p1-py" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#306998] transition-all">
-    <div class="flex flex-col items-center justify-center gap-sm p-xl">
-        <span class="material-symbols-outlined text-4xl text-[#306998]">terminal</span>
-        <div class="text-center">
-            <p class="font-medium text-on-surface text-sm">Script Python</p>
-            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.py</p>
-        </div>
-        <div class="flex gap-xs mt-xs">
-            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
-                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
-            </button>
-            <a href="codigos/problema1/analisis.py" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
-                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-            </a>
-        </div>
-    </div>
-    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
-</div>
-<div id="card-p1-r" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#276DC3] transition-all">
-    <div class="flex flex-col items-center justify-center gap-sm p-xl">
-        <span class="material-symbols-outlined text-4xl text-[#276DC3]">functions</span>
-        <div class="text-center">
-            <p class="font-medium text-on-surface text-sm">Script R</p>
-            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.R</p>
-        </div>
-        <div class="flex gap-xs mt-xs">
-            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
-                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
-            </button>
-            <a href="codigos/problema1/analisis.R" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
-                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-            </a>
-        </div>
-    </div>
-    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
-</div>
-<a href="imagenes/problema1/datos.xlsx" download class="flex flex-col items-center justify-center gap-sm border-2 border-dashed border-outline-variant rounded-lg p-xl hover:border-[#217346] hover:bg-[#217346]/5 transition-all no-underline text-center">
-    <span class="material-symbols-outlined text-4xl text-[#217346]">table_chart</span>
+<!-- Script Python -->
+<div id="card-p1-py" class="tool-card asset-card" data-tool="python">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">terminal</span></div>
+    <span class="tool-badge python">Python</span>
     <div>
-        <p class="font-medium text-on-surface text-sm">Archivo Excel</p>
-        <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">datos.xlsx</p>
+        <p class="asset-card__title">Script Python</p>
+        <p class="asset-card__file">analisis.py</p>
     </div>
-    <span class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs">
-        <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-    </span>
+    <div class="asset-card__actions">
+        <button class="btn-view asset-btn asset-btn--primary"><span class="material-symbols-outlined">visibility</span>Ver código</button>
+        <a href="codigos/problema1/analisis.py" download class="asset-btn asset-btn--ghost"><span class="material-symbols-outlined">download</span>Descargar</a>
+    </div>
+</div>
+<!-- Script R -->
+<div id="card-p1-r" class="tool-card asset-card" data-tool="r">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">functions</span></div>
+    <span class="tool-badge r">R</span>
+    <div>
+        <p class="asset-card__title">Script R</p>
+        <p class="asset-card__file">analisis.R</p>
+    </div>
+    <div class="asset-card__actions">
+        <button class="btn-view asset-btn asset-btn--primary"><span class="material-symbols-outlined">visibility</span>Ver código</button>
+        <a href="codigos/problema1/analisis.R" download class="asset-btn asset-btn--ghost"><span class="material-symbols-outlined">download</span>Descargar</a>
+    </div>
+</div>
+<!-- Archivo Excel -->
+<a href="imagenes/problema1/datos.xlsx" download class="tool-card asset-card no-underline" data-tool="excel">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">table_chart</span></div>
+    <span class="tool-badge excel">Excel</span>
+    <div>
+        <p class="asset-card__title">Archivo Excel</p>
+        <p class="asset-card__file">datos.xlsx</p>
+    </div>
+    <div class="asset-card__actions">
+        <span class="asset-btn asset-btn--primary"><span class="material-symbols-outlined">download</span>Descargar</span>
+    </div>
 </a>
 </div>
 </section>
@@ -242,51 +237,43 @@ Anexo
         <h2 class="font-bold text-[#1a2a4a]" style="font-size: 20px;">Problema 2</h2>
     </div>
 <div class="p-lg grid grid-cols-1 md:grid-cols-3 gap-lg">
-<div id="card-p2-py" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#306998] transition-all">
-    <div class="flex flex-col items-center justify-center gap-sm p-xl">
-        <span class="material-symbols-outlined text-4xl text-[#306998]">terminal</span>
-        <div class="text-center">
-            <p class="font-medium text-on-surface text-sm">Script Python</p>
-            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.py</p>
-        </div>
-        <div class="flex gap-xs mt-xs">
-            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
-                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
-            </button>
-            <a href="codigos/problema2/analisis.py" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
-                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-            </a>
-        </div>
-    </div>
-    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
-</div>
-<div id="card-p2-r" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#276DC3] transition-all">
-    <div class="flex flex-col items-center justify-center gap-sm p-xl">
-        <span class="material-symbols-outlined text-4xl text-[#276DC3]">functions</span>
-        <div class="text-center">
-            <p class="font-medium text-on-surface text-sm">Script R</p>
-            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.R</p>
-        </div>
-        <div class="flex gap-xs mt-xs">
-            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
-                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
-            </button>
-            <a href="codigos/problema2/analisis.R" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
-                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-            </a>
-        </div>
-    </div>
-    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
-</div>
-<a href="imagenes/problema2/datos.xlsx" download class="flex flex-col items-center justify-center gap-sm border-2 border-dashed border-outline-variant rounded-lg p-xl hover:border-[#217346] hover:bg-[#217346]/5 transition-all no-underline text-center">
-    <span class="material-symbols-outlined text-4xl text-[#217346]">table_chart</span>
+<!-- Script Python -->
+<div id="card-p2-py" class="tool-card asset-card" data-tool="python">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">terminal</span></div>
+    <span class="tool-badge python">Python</span>
     <div>
-        <p class="font-medium text-on-surface text-sm">Archivo Excel</p>
-        <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">datos.xlsx</p>
+        <p class="asset-card__title">Script Python</p>
+        <p class="asset-card__file">analisis.py</p>
     </div>
-    <span class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs">
-        <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-    </span>
+    <div class="asset-card__actions">
+        <button class="btn-view asset-btn asset-btn--primary"><span class="material-symbols-outlined">visibility</span>Ver código</button>
+        <a href="codigos/problema2/analisis.py" download class="asset-btn asset-btn--ghost"><span class="material-symbols-outlined">download</span>Descargar</a>
+    </div>
+</div>
+<!-- Script R -->
+<div id="card-p2-r" class="tool-card asset-card" data-tool="r">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">functions</span></div>
+    <span class="tool-badge r">R</span>
+    <div>
+        <p class="asset-card__title">Script R</p>
+        <p class="asset-card__file">analisis.R</p>
+    </div>
+    <div class="asset-card__actions">
+        <button class="btn-view asset-btn asset-btn--primary"><span class="material-symbols-outlined">visibility</span>Ver código</button>
+        <a href="codigos/problema2/analisis.R" download class="asset-btn asset-btn--ghost"><span class="material-symbols-outlined">download</span>Descargar</a>
+    </div>
+</div>
+<!-- Archivo Excel -->
+<a href="imagenes/problema2/datos.xlsx" download class="tool-card asset-card no-underline" data-tool="excel">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">table_chart</span></div>
+    <span class="tool-badge excel">Excel</span>
+    <div>
+        <p class="asset-card__title">Archivo Excel</p>
+        <p class="asset-card__file">datos.xlsx</p>
+    </div>
+    <div class="asset-card__actions">
+        <span class="asset-btn asset-btn--primary"><span class="material-symbols-outlined">download</span>Descargar</span>
+    </div>
 </a>
 </div>
 </section>
@@ -299,91 +286,137 @@ Anexo
         <h2 class="font-bold text-[#1a2a4a]" style="font-size: 20px;">Problema 3</h2>
     </div>
 <div class="p-lg grid grid-cols-1 md:grid-cols-3 gap-lg">
-<div id="card-p3-py" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#306998] transition-all">
-    <div class="flex flex-col items-center justify-center gap-sm p-xl">
-        <span class="material-symbols-outlined text-4xl text-[#306998]">terminal</span>
-        <div class="text-center">
-            <p class="font-medium text-on-surface text-sm">Script Python</p>
-            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.py</p>
-        </div>
-        <div class="flex gap-xs mt-xs">
-            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
-                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
-            </button>
-            <a href="codigos/problema3/analisis.py" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
-                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-            </a>
-        </div>
-    </div>
-    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
-</div>
-<div id="card-p3-r" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#276DC3] transition-all">
-    <div class="flex flex-col items-center justify-center gap-sm p-xl">
-        <span class="material-symbols-outlined text-4xl text-[#276DC3]">functions</span>
-        <div class="text-center">
-            <p class="font-medium text-on-surface text-sm">Script R</p>
-            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.R</p>
-        </div>
-        <div class="flex gap-xs mt-xs">
-            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
-                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
-            </button>
-            <a href="codigos/problema3/analisis.R" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
-                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-            </a>
-        </div>
-    </div>
-    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
-</div>
-<a href="imagenes/problema3/datos.xlsx" download class="flex flex-col items-center justify-center gap-sm border-2 border-dashed border-outline-variant rounded-lg p-xl hover:border-[#217346] hover:bg-[#217346]/5 transition-all no-underline text-center">
-    <span class="material-symbols-outlined text-4xl text-[#217346]">table_chart</span>
+<!-- Script Python -->
+<div id="card-p3-py" class="tool-card asset-card" data-tool="python">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">terminal</span></div>
+    <span class="tool-badge python">Python</span>
     <div>
-        <p class="font-medium text-on-surface text-sm">Archivo Excel</p>
-        <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">datos.xlsx</p>
+        <p class="asset-card__title">Script Python</p>
+        <p class="asset-card__file">analisis.py</p>
     </div>
-    <span class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs">
-        <span class="material-symbols-outlined text-[14px]">download</span>Descargar
-    </span>
+    <div class="asset-card__actions">
+        <button class="btn-view asset-btn asset-btn--primary"><span class="material-symbols-outlined">visibility</span>Ver código</button>
+        <a href="codigos/problema3/analisis.py" download class="asset-btn asset-btn--ghost"><span class="material-symbols-outlined">download</span>Descargar</a>
+    </div>
+</div>
+<!-- Script R -->
+<div id="card-p3-r" class="tool-card asset-card" data-tool="r">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">functions</span></div>
+    <span class="tool-badge r">R</span>
+    <div>
+        <p class="asset-card__title">Script R</p>
+        <p class="asset-card__file">analisis.R</p>
+    </div>
+    <div class="asset-card__actions">
+        <button class="btn-view asset-btn asset-btn--primary"><span class="material-symbols-outlined">visibility</span>Ver código</button>
+        <a href="codigos/problema3/analisis.R" download class="asset-btn asset-btn--ghost"><span class="material-symbols-outlined">download</span>Descargar</a>
+    </div>
+</div>
+<!-- Archivo Excel -->
+<a href="imagenes/problema3/datos.xlsx" download class="tool-card asset-card no-underline" data-tool="excel">
+    <div class="asset-card__icon"><span class="material-symbols-outlined">table_chart</span></div>
+    <span class="tool-badge excel">Excel</span>
+    <div>
+        <p class="asset-card__title">Archivo Excel</p>
+        <p class="asset-card__file">datos.xlsx</p>
+    </div>
+    <div class="asset-card__actions">
+        <span class="asset-btn asset-btn--primary"><span class="material-symbols-outlined">download</span>Descargar</span>
+    </div>
 </a>
 </div>
 </section>
 </div>
 </div>
 </main>
+<!-- Visor de código (ventana estilo macOS) -->
+<div id="code-modal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4" style="background:rgba(15,23,42,.65); backdrop-filter:blur(4px);">
+    <div class="w-full max-w-4xl max-h-[85vh] flex flex-col rounded-xl overflow-hidden shadow-2xl border border-slate-700">
+        <!-- Barra de título -->
+        <div class="flex items-center gap-sm px-md py-sm shrink-0" style="background:#1e293b; border-bottom:1px solid #334155;">
+            <div class="flex items-center gap-[6px] shrink-0">
+                <span class="w-3 h-3 rounded-full" style="background:#ff5f57;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#febc2e;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#28c840;"></span>
+            </div>
+            <span id="code-modal-title" class="flex-1 text-center text-slate-300 text-xs truncate px-sm" style="font-family:'JetBrains Mono',monospace;"></span>
+            <div class="flex items-center gap-xs shrink-0">
+                <button id="code-copy" class="flex items-center gap-xs px-sm py-[5px] rounded-md text-xs text-slate-200 border border-slate-600 hover:bg-slate-700 transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">content_copy</span>Copiar
+                </button>
+                <a id="code-download" href="#" download class="flex items-center gap-xs px-sm py-[5px] rounded-md text-xs text-slate-200 border border-slate-600 hover:bg-slate-700 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+                </a>
+                <button id="code-close" class="flex items-center gap-xs px-sm py-[5px] rounded-md text-xs text-white border border-[#2d7fd4] bg-[#2d7fd4] hover:bg-[#256bb3] transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">close</span>Cerrar
+                </button>
+            </div>
+        </div>
+        <!-- Cuerpo del código -->
+        <pre class="flex-1 overflow-auto m-0 thin-scrollbar" style="background:#0f172a;"><code id="code-modal-body" class="hljs" style="background:#0f172a;font-size:13px;font-family:'JetBrains Mono',monospace;line-height:1.6;padding:16px;display:block;"></code></pre>
+    </div>
+</div>
 <script>
+    const codeModal = document.getElementById('code-modal');
+    const codeModalTitle = document.getElementById('code-modal-title');
+    const codeModalBody = document.getElementById('code-modal-body');
+    const codeCopyBtn = document.getElementById('code-copy');
+    const codeDownloadBtn = document.getElementById('code-download');
+    const codeCloseBtn = document.getElementById('code-close');
+
+    function openCodeModal(filePath) {
+        const ext = filePath.split('.').pop().toLowerCase();
+        const lang = ext === 'r' ? 'r' : 'python';
+        codeModalTitle.textContent = filePath;
+        codeModalBody.className = 'hljs';
+        codeModalBody.removeAttribute('data-highlighted');
+        codeModalBody.textContent = 'Cargando…';
+        codeDownloadBtn.setAttribute('href', filePath);
+        codeDownloadBtn.setAttribute('download', filePath.split('/').pop());
+        codeModal.classList.remove('hidden');
+        codeModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        fetch(filePath)
+            .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+            .then(text => {
+                codeModalBody.className = 'hljs language-' + lang;
+                codeModalBody.removeAttribute('data-highlighted');
+                codeModalBody.textContent = text;
+                if (window.hljs) hljs.highlightElement(codeModalBody);
+            })
+            .catch(() => {
+                codeModalBody.className = 'hljs';
+                codeModalBody.textContent = '⚠  La vista previa solo funciona desde un servidor web (GitHub Pages o un servidor local).\nUsa el botón «Descargar» para obtener el archivo.';
+            });
+    }
+
+    function closeCodeModal() {
+        codeModal.classList.add('hidden');
+        codeModal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+
+    codeCloseBtn.addEventListener('click', closeCodeModal);
+    codeModal.addEventListener('click', (e) => { if (e.target === codeModal) closeCodeModal(); });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !codeModal.classList.contains('hidden')) closeCodeModal();
+    });
+
+    codeCopyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(codeModalBody.textContent).then(() => {
+            codeCopyBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>Copiado';
+            setTimeout(() => {
+                codeCopyBtn.innerHTML = '<span class="material-symbols-outlined text-[14px]">content_copy</span>Copiar';
+            }, 1500);
+        });
+    });
+
     function setupCodePreview(cardId, filePath) {
         const card = document.getElementById(cardId);
         if (!card) return;
         const btn = card.querySelector('.btn-view');
-        const pre = card.querySelector('pre');
-        let loaded = false;
-        let visible = false;
-
-        btn.addEventListener('click', () => {
-            if (!loaded) {
-                fetch(filePath)
-                    .then(r => { if (!r.ok) throw new Error(); return r.text(); })
-                    .then(text => {
-                        pre.textContent = text;
-                        loaded = true;
-                        visible = true;
-                        pre.classList.remove('hidden');
-                        btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">visibility_off</span>Ocultar';
-                    })
-                    .catch(() => {
-                        pre.textContent = '⚠  Preview disponible solo desde GitHub Pages.\nAbre la página publicada para ver el código aquí.';
-                        pre.classList.remove('hidden');
-                        loaded = true;
-                        visible = true;
-                    });
-            } else {
-                visible = !visible;
-                pre.classList.toggle('hidden', !visible);
-                btn.innerHTML = visible
-                    ? '<span class="material-symbols-outlined text-[14px]">visibility_off</span>Ocultar'
-                    : '<span class="material-symbols-outlined text-[14px]">visibility</span>Ver código';
-            }
-        });
+        if (!btn) return;
+        btn.addEventListener('click', () => openCodeModal(filePath));
     }
 
     setupCodePreview('card-p1-py', 'codigos/problema1/analisis.py');
