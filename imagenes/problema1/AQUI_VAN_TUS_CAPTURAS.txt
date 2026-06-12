@@ -1,0 +1,11 @@
+Carpeta: Problema 1 - Cuadrado Latino
+========================================
+Guarda aquí las capturas (mínimo 3 por herramienta):
+
+  - excel_1.png, excel_2.png, excel_3.png   → Capturas de Excel
+  - minitab_1.png, minitab_2.png, minitab_3.png → Capturas de Minitab
+  - python_1.png, python_2.png, python_3.png → Capturas de Python
+  - r_1.png, r_2.png, r_3.png               → Capturas de R
+
+Puedes agregar más imágenes usando el mismo patrón (ej: excel_4.png).
+Las imágenes que no existan simplemente no se mostrarán.

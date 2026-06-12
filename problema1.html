@@ -1,0 +1,271 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Examen PC3 - Problema 1 | Control Estadístico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d9dadb",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed": "#410000",
+                        "tertiary": "#053506",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-high": "#e7e8e9",
+                        "primary": "#610000",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#114d5d",
+                        "on-primary-fixed-variant": "#920703",
+                        "on-secondary-fixed": "#001f28",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "primary-container": "#8b0000",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b52619",
+                        "secondary-fixed": "#b6ebfe",
+                        "primary-fixed": "#ffdad4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#002201",
+                        "secondary-container": "#b3e8fb",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#23501e",
+                        "on-background": "#191c1d",
+                        "tertiary-fixed": "#bcf0ae",
+                        "secondary": "#306576",
+                        "background": "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "tertiary-container": "#1f4c1b",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed-dim": "#a1d494",
+                        "inverse-primary": "#ffb4a8",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-container": "#34697a",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "outline": "#8e706b",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e3beb8",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#8abc7e",
+                        "secondary-fixed-dim": "#9acee1",
+                        "on-primary-container": "#ff907f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#5a403c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "gutter": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-40 bg-gray-900 border-b border-gray-700 flex items-center px-lg h-16">
+<a class="flex items-center gap-sm shrink-0 no-underline" href="index.html">
+<div class="w-9 h-9 rounded-full bg-white flex items-center justify-center p-0.5 shadow shrink-0">
+<img alt="UNI Logo" class="w-full h-full object-contain rounded-full" src="imagenes/logo/uni.png"/>
+</div>
+<span class="font-bold text-white text-sm hidden lg:block">Universidad Nacional de Ingeniería</span>
+</a>
+<div class="h-6 w-px bg-gray-700 mx-md shrink-0"></div>
+<div class="flex items-center gap-sm">
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg bg-[#b3e8fb] text-gray-900 font-semibold text-sm uppercase transition-all duration-150" href="problema1.html">
+<span class="w-6 h-6 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-xs shrink-0">1</span>
+Problema 1
+</a>
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg text-gray-400 hover:text-white hover:bg-white/5 font-medium text-sm uppercase transition-all duration-150" href="problema2.html">
+<span class="w-6 h-6 rounded-full bg-gray-700 text-gray-300 flex items-center justify-center font-bold text-xs shrink-0">2</span>
+Problema 2
+</a>
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg text-gray-400 hover:text-white hover:bg-white/5 font-medium text-sm uppercase transition-all duration-150" href="problema3.html">
+<span class="w-6 h-6 rounded-full bg-gray-700 text-gray-300 flex items-center justify-center font-bold text-xs shrink-0">3</span>
+Problema 3
+</a>
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg text-gray-400 hover:text-white hover:bg-white/5 font-medium text-sm uppercase transition-all duration-150" href="anexos.html">
+<span class="material-symbols-outlined text-[16px]">attach_file</span>
+Anexo
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-16 px-container-margin pb-container-margin md:px-xl md:pb-xl space-y-xl">
+<!-- Banner -->
+<div class="relative rounded-xl overflow-hidden mb-xl flex items-center" style="background: #eef4fb; min-height: 128px; border: 1px solid #cce0f5;">
+<div class="w-14 h-14 rounded-full bg-white shadow flex items-center justify-center mx-lg shrink-0" style="border: 1px solid #cce0f5;">
+<span class="material-symbols-outlined" style="font-size: 28px; color: #2d7fd4; font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div class="flex-1 py-lg pr-lg">
+<h2 class="font-bold text-[#1a2a4a] leading-tight mb-xs gradient-title" style="font-size: 28px;">Examen PC3</h2>
+<p class="font-semibold mb-1" style="color: #2d7fd4; font-size: 16px;">Control Estadístico</p>
+<div class="h-0.5 mb-2" style="width: 36px; background: #2d7fd4;"></div></div>
+<div class="absolute right-0 top-0 h-full w-72 overflow-hidden pointer-events-none" style="opacity: 0.18;">
+<svg viewBox="0 0 288 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+<circle cx="20" cy="18" r="2.5" fill="#2d7fd4"/><circle cx="55" cy="12" r="2.5" fill="#2d7fd4"/><circle cx="90" cy="24" r="2.5" fill="#2d7fd4"/><circle cx="125" cy="8" r="2.5" fill="#2d7fd4"/><circle cx="160" cy="20" r="2.5" fill="#2d7fd4"/><circle cx="195" cy="14" r="2.5" fill="#2d7fd4"/><circle cx="230" cy="10" r="2.5" fill="#2d7fd4"/><circle cx="265" cy="18" r="2.5" fill="#2d7fd4"/>
+<circle cx="20" cy="50" r="2.5" fill="#2d7fd4"/><circle cx="55" cy="44" r="2.5" fill="#2d7fd4"/><circle cx="90" cy="56" r="2.5" fill="#2d7fd4"/><circle cx="125" cy="40" r="2.5" fill="#2d7fd4"/><circle cx="160" cy="52" r="2.5" fill="#2d7fd4"/><circle cx="195" cy="46" r="2.5" fill="#2d7fd4"/><circle cx="230" cy="42" r="2.5" fill="#2d7fd4"/>
+<polyline points="20,100 65,65 120,82 175,45 240,58 288,38" stroke="#2d7fd4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="20" cy="100" r="5.5" fill="#2d7fd4"/><circle cx="65" cy="65" r="5.5" fill="#2d7fd4"/><circle cx="120" cy="82" r="5.5" fill="#2d7fd4"/><circle cx="175" cy="45" r="5.5" fill="#2d7fd4"/><circle cx="240" cy="58" r="5.5" fill="#2d7fd4"/>
+</svg>
+</div>
+</div>
+<!-- Problem 1 -->
+<section class="bg-surface-container-lowest rounded-xl border border-surface-container-high shadow-sm overflow-hidden">
+    <div class="flex items-center gap-md px-lg py-md" style="background: #eef4fb; border-bottom: 1px solid #cce0f5;">
+        <div class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center shrink-0" style="border: 1px solid #cce0f5;">
+            <span class="material-symbols-outlined" style="font-size: 20px; color: #2d7fd4; font-variation-settings: 'FILL' 1;">analytics</span>
+        </div>
+        <h3 class="font-bold text-[#1a2a4a] gradient-title" style="font-size: 20px;">Problema 1</h3>
+    </div>
+<div class="p-lg space-y-lg">
+<!-- Enunciado y Formulación de Hipótesis -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-stretch">
+<!-- Enunciado del Problema -->
+<div class="lg:col-span-5">
+<div class="flex items-center gap-xs text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined text-[18px]">assignment</span>
+<span class="text-label-md font-label-md uppercase tracking-wider">Enunciado del Problema</span>
+</div>
+<div class="bg-surface-container rounded-lg border border-surface-container-high p-sm">
+<img alt="Enunciado Problema 1" class="w-full object-contain rounded img-lightbox" style="max-height:380px;" src="imagenes/problema1/enunciado.png">
+</div>
+</div>
+<!-- Formulación de Hipótesis -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="flex items-center gap-xs text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined text-[18px]">functions</span>
+<span class="text-label-md font-label-md uppercase tracking-wider">Formulación de Hipótesis</span>
+</div>
+<div class="bg-surface-container rounded-lg border border-surface-container-high p-sm flex-1 flex items-center justify-center">
+<img alt="Formulación de Hipótesis - Problema 1" class="w-full object-contain rounded img-lightbox" src="imagenes/problema1/formula_1.png">
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Excel -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">table_view</span>
+<span class="text-label-md font-label-md uppercase tracking-wider">Excel</span>
+</div>
+<div class="tool-card bg-surface-container rounded-lg border border-surface-container-high p-sm min-h-[120px]" data-tool="excel">
+<div class="grid grid-cols-2 gap-1">
+<img alt="Captura Excel 1 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/excel_1.png">
+<img alt="Captura Excel 2 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/excel_2.png">
+<img alt="Captura Excel 3 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/excel_3.png">
+<img alt="Captura Excel 4 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/excel_4.png">
+</div>
+</div>
+</div>
+<!-- Minitab -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">monitoring</span>
+<span class="text-label-md font-label-md uppercase tracking-wider">Minitab</span>
+</div>
+<div class="tool-card bg-surface-container rounded-lg border border-surface-container-high p-sm min-h-[120px]" data-tool="minitab">
+<div class="grid grid-cols-2 gap-1">
+<img alt="Captura Minitab 1 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/minitab_1.png">
+<img alt="Captura Minitab 2 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/minitab_2.png">
+<img alt="Captura Minitab 3 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/minitab_3.png">
+<img alt="Captura Minitab 4 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/minitab_4.png">
+</div>
+</div>
+</div>
+<!-- Python -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span class="text-label-md font-label-md uppercase tracking-wider">Python</span>
+</div>
+<div class="tool-card bg-surface-container rounded-lg border border-surface-container-high p-sm min-h-[120px]" data-tool="python">
+<div class="grid grid-cols-2 gap-1">
+<img alt="Captura Python 1 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/python_1.png">
+<img alt="Captura Python 2 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/python_2.png">
+<img alt="Captura Python 3 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/python_3.png">
+<img alt="Captura Python 4 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/python_4.png">
+</div>
+</div>
+</div>
+<!-- R -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">code</span>
+<span class="text-label-md font-label-md uppercase tracking-wider">R</span>
+</div>
+<div class="tool-card bg-surface-container rounded-lg border border-surface-container-high p-sm min-h-[120px]" data-tool="r">
+<div class="grid grid-cols-2 gap-1">
+<img alt="Captura R 1 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/r_1.png">
+<img alt="Captura R 2 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/r_2.png">
+<img alt="Captura R 3 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/r_3.png">
+<img alt="Captura R 4 - Problema 1" class="w-full h-auto object-contain rounded border border-surface-container-high/30 img-lightbox" src="imagenes/problema1/r_4.png">
+</div>
+</div>
+</div>
+</div>
+<!-- Callout -->
+<div class="bg-[#eef4fb] border-l-4 border-[#2d7fd4] rounded-r-lg p-md mt-md">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-[#2d7fd4] shrink-0">lightbulb</span>
+<h4 class="text-title-lg font-title-lg text-[#1a2a4a] gradient-title">Interpretaciones y Conclusiones</h4>
+</div>
+<div class="pl-[28px]">
+<div class="bg-surface-container-lowest rounded-lg border border-[#cce0f5] p-sm">
+<img alt="Interpretaciones y Conclusiones - Problema 1" class="w-full object-contain rounded img-lightbox" src="imagenes/problema1/interpretacion_1.png">
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script src="js/main.js"></script>
+</body></html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Examen PC3 - Anexos | Control Estadístico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#8abc7e",
+                        "background": "#f8f9fa",
+                        "tertiary": "#053506",
+                        "secondary-fixed-dim": "#9acee1",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "surface-variant": "#e1e3e4",
+                        "primary-fixed": "#ffdad4",
+                        "on-surface-variant": "#5a403c",
+                        "surface-container": "#edeeef",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-container": "#1f4c1b",
+                        "on-tertiary-fixed-variant": "#23501e",
+                        "on-secondary-fixed": "#001f28",
+                        "inverse-primary": "#ffb4a8",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#b6ebfe",
+                        "on-tertiary-fixed": "#002201",
+                        "primary-container": "#8b0000",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#306576",
+                        "secondary-container": "#b3e8fb",
+                        "tertiary-fixed-dim": "#a1d494",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed-variant": "#920703",
+                        "surface-tint": "#b52619",
+                        "outline": "#8e706b",
+                        "on-secondary-fixed-variant": "#114d5d",
+                        "on-primary-fixed": "#410000",
+                        "on-error-container": "#93000a",
+                        "primary": "#610000",
+                        "on-primary-container": "#ff907f",
+                        "on-background": "#191c1d",
+                        "surface-bright": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-container": "#34697a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#bcf0ae",
+                        "outline-variant": "#e3beb8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "lg": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .upload-zone-hover:hover {
+            border-color: #2d7fd4;
+            background-color: rgba(45, 127, 212, 0.02);
+        }
+        .thin-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .thin-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e1e3e4;
+            border-radius: 10px;
+        }
+    </style>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-40 bg-gray-900 border-b border-gray-700 flex items-center px-lg h-16">
+<a class="flex items-center gap-sm shrink-0 no-underline" href="index.html">
+<div class="w-9 h-9 rounded-full bg-white flex items-center justify-center p-0.5 shadow shrink-0">
+<img alt="UNI Logo" class="w-full h-full object-contain rounded-full" src="imagenes/logo/uni.png"/>
+</div>
+<span class="font-bold text-white text-sm hidden lg:block">Universidad Nacional de Ingeniería</span>
+</a>
+<div class="h-6 w-px bg-gray-700 mx-md shrink-0"></div>
+<div class="flex items-center gap-sm">
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg text-gray-400 hover:text-white hover:bg-white/5 font-medium text-sm uppercase transition-all duration-150" href="problema1.html">
+<span class="w-6 h-6 rounded-full bg-gray-700 text-gray-300 flex items-center justify-center font-bold text-xs shrink-0">1</span>
+Problema 1
+</a>
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg text-gray-400 hover:text-white hover:bg-white/5 font-medium text-sm uppercase transition-all duration-150" href="problema2.html">
+<span class="w-6 h-6 rounded-full bg-gray-700 text-gray-300 flex items-center justify-center font-bold text-xs shrink-0">2</span>
+Problema 2
+</a>
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg text-gray-400 hover:text-white hover:bg-white/5 font-medium text-sm uppercase transition-all duration-150" href="problema3.html">
+<span class="w-6 h-6 rounded-full bg-gray-700 text-gray-300 flex items-center justify-center font-bold text-xs shrink-0">3</span>
+Problema 3
+</a>
+<a class="flex items-center gap-xs px-sm py-[6px] rounded-lg bg-[#b3e8fb] text-gray-900 font-semibold text-sm uppercase transition-all duration-150" href="anexos.html">
+<span class="material-symbols-outlined text-[16px]">attach_file</span>
+Anexo
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-16 px-container-margin pb-xl">
+<!-- Banner -->
+<div class="relative rounded-xl overflow-hidden mb-xl flex items-center" style="background: #eef4fb; min-height: 128px; border: 1px solid #cce0f5;">
+<div class="w-14 h-14 rounded-full bg-white shadow flex items-center justify-center mx-lg shrink-0" style="border: 1px solid #cce0f5;">
+<span class="material-symbols-outlined" style="font-size: 28px; color: #2d7fd4; font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div class="flex-1 py-lg pr-lg">
+<h2 class="font-bold text-[#1a2a4a] leading-tight mb-xs" style="font-size: 28px;">Examen PC3</h2>
+<p class="font-semibold mb-1" style="color: #2d7fd4; font-size: 16px;">Control Estadístico</p>
+<div class="h-0.5 mb-2" style="width: 36px; background: #2d7fd4;"></div></div>
+<div class="absolute right-0 top-0 h-full w-72 overflow-hidden pointer-events-none" style="opacity: 0.18;">
+<svg viewBox="0 0 288 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+<circle cx="20" cy="18" r="2.5" fill="#2d7fd4"/><circle cx="55" cy="12" r="2.5" fill="#2d7fd4"/><circle cx="90" cy="24" r="2.5" fill="#2d7fd4"/><circle cx="125" cy="8" r="2.5" fill="#2d7fd4"/><circle cx="160" cy="20" r="2.5" fill="#2d7fd4"/><circle cx="195" cy="14" r="2.5" fill="#2d7fd4"/><circle cx="230" cy="10" r="2.5" fill="#2d7fd4"/><circle cx="265" cy="18" r="2.5" fill="#2d7fd4"/>
+<circle cx="20" cy="50" r="2.5" fill="#2d7fd4"/><circle cx="55" cy="44" r="2.5" fill="#2d7fd4"/><circle cx="90" cy="56" r="2.5" fill="#2d7fd4"/><circle cx="125" cy="40" r="2.5" fill="#2d7fd4"/><circle cx="160" cy="52" r="2.5" fill="#2d7fd4"/><circle cx="195" cy="46" r="2.5" fill="#2d7fd4"/><circle cx="230" cy="42" r="2.5" fill="#2d7fd4"/>
+<polyline points="20,100 65,65 120,82 175,45 240,58 288,38" stroke="#2d7fd4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="20" cy="100" r="5.5" fill="#2d7fd4"/><circle cx="65" cy="65" r="5.5" fill="#2d7fd4"/><circle cx="120" cy="82" r="5.5" fill="#2d7fd4"/><circle cx="175" cy="45" r="5.5" fill="#2d7fd4"/><circle cx="240" cy="58" r="5.5" fill="#2d7fd4"/>
+</svg>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-lg">
+<!-- Information Callout -->
+<div class="col-span-12 lg:col-span-12">
+<div class="bg-[#2d7fd4]/5 border-l-4 border-[#2d7fd4] p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-[#2d7fd4] mt-xs" data-icon="info">info</span>
+<div>
+<h4 class="font-title-lg text-title-lg text-[#1a2a4a] font-bold">Instrucciones de Carga</h4>
+<p class="text-body-sm text-on-surface-variant max-w-4xl">
+                            Para cada problema planteado en el examen, es obligatorio adjuntar los scripts de análisis correspondientes. Los archivos deben estar comentados siguiendo el estándar <span class="font-mono-data text-xs bg-surface-container-high px-1">PEP8</span> para Python y la guía de estilo de Google para R. El sistema verificará la ejecución básica de los scripts al finalizar la carga.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Problem Sections -->
+<div class="col-span-12 space-y-xl">
+<!-- Problem 1 Card -->
+<section class="bg-white border border-outline-variant rounded shadow-sm overflow-hidden">
+    <div class="flex items-center gap-md px-lg py-md" style="background: #eef4fb; border-bottom: 1px solid #cce0f5;">
+        <div class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center shrink-0" style="border: 1px solid #cce0f5;">
+            <span class="material-symbols-outlined" style="font-size: 20px; color: #2d7fd4; font-variation-settings: 'FILL' 1;">code</span>
+        </div>
+        <h2 class="font-bold text-[#1a2a4a]" style="font-size: 20px;">Problema 1 </h2>
+    </div>
+<div class="p-lg grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div id="card-p1-py" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#306998] transition-all">
+    <div class="flex flex-col items-center justify-center gap-sm p-xl">
+        <span class="material-symbols-outlined text-4xl text-[#306998]">terminal</span>
+        <div class="text-center">
+            <p class="font-medium text-on-surface text-sm">Script Python</p>
+            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.py</p>
+        </div>
+        <div class="flex gap-xs mt-xs">
+            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
+            </button>
+            <a href="codigos/problema1/analisis.py" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
+                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+            </a>
+        </div>
+    </div>
+    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
+</div>
+<div id="card-p1-r" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#276DC3] transition-all">
+    <div class="flex flex-col items-center justify-center gap-sm p-xl">
+        <span class="material-symbols-outlined text-4xl text-[#276DC3]">functions</span>
+        <div class="text-center">
+            <p class="font-medium text-on-surface text-sm">Script R</p>
+            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.R</p>
+        </div>
+        <div class="flex gap-xs mt-xs">
+            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
+            </button>
+            <a href="codigos/problema1/analisis.R" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
+                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+            </a>
+        </div>
+    </div>
+    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
+</div>
+<a href="imagenes/problema1/datos.xlsx" download class="flex flex-col items-center justify-center gap-sm border-2 border-dashed border-outline-variant rounded-lg p-xl hover:border-[#217346] hover:bg-[#217346]/5 transition-all no-underline text-center">
+    <span class="material-symbols-outlined text-4xl text-[#217346]">table_chart</span>
+    <div>
+        <p class="font-medium text-on-surface text-sm">Archivo Excel</p>
+        <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">datos.xlsx</p>
+    </div>
+    <span class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs">
+        <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+    </span>
+</a>
+</div>
+</section>
+<!-- Problem 2 Card -->
+<section class="bg-white border border-outline-variant rounded shadow-sm overflow-hidden">
+    <div class="flex items-center gap-md px-lg py-md" style="background: #eef4fb; border-bottom: 1px solid #cce0f5;">
+        <div class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center shrink-0" style="border: 1px solid #cce0f5;">
+            <span class="material-symbols-outlined" style="font-size: 20px; color: #2d7fd4; font-variation-settings: 'FILL' 1;">code</span>
+        </div>
+        <h2 class="font-bold text-[#1a2a4a]" style="font-size: 20px;">Problema 2</h2>
+    </div>
+<div class="p-lg grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div id="card-p2-py" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#306998] transition-all">
+    <div class="flex flex-col items-center justify-center gap-sm p-xl">
+        <span class="material-symbols-outlined text-4xl text-[#306998]">terminal</span>
+        <div class="text-center">
+            <p class="font-medium text-on-surface text-sm">Script Python</p>
+            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.py</p>
+        </div>
+        <div class="flex gap-xs mt-xs">
+            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
+            </button>
+            <a href="codigos/problema2/analisis.py" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
+                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+            </a>
+        </div>
+    </div>
+    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
+</div>
+<div id="card-p2-r" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#276DC3] transition-all">
+    <div class="flex flex-col items-center justify-center gap-sm p-xl">
+        <span class="material-symbols-outlined text-4xl text-[#276DC3]">functions</span>
+        <div class="text-center">
+            <p class="font-medium text-on-surface text-sm">Script R</p>
+            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.R</p>
+        </div>
+        <div class="flex gap-xs mt-xs">
+            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
+            </button>
+            <a href="codigos/problema2/analisis.R" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
+                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+            </a>
+        </div>
+    </div>
+    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
+</div>
+<a href="imagenes/problema2/datos.xlsx" download class="flex flex-col items-center justify-center gap-sm border-2 border-dashed border-outline-variant rounded-lg p-xl hover:border-[#217346] hover:bg-[#217346]/5 transition-all no-underline text-center">
+    <span class="material-symbols-outlined text-4xl text-[#217346]">table_chart</span>
+    <div>
+        <p class="font-medium text-on-surface text-sm">Archivo Excel</p>
+        <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">datos.xlsx</p>
+    </div>
+    <span class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs">
+        <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+    </span>
+</a>
+</div>
+</section>
+<!-- Problem 3 Card -->
+<section class="bg-white border border-outline-variant rounded shadow-sm overflow-hidden">
+    <div class="flex items-center gap-md px-lg py-md" style="background: #eef4fb; border-bottom: 1px solid #cce0f5;">
+        <div class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center shrink-0" style="border: 1px solid #cce0f5;">
+            <span class="material-symbols-outlined" style="font-size: 20px; color: #2d7fd4; font-variation-settings: 'FILL' 1;">code</span>
+        </div>
+        <h2 class="font-bold text-[#1a2a4a]" style="font-size: 20px;">Problema 3</h2>
+    </div>
+<div class="p-lg grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div id="card-p3-py" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#306998] transition-all">
+    <div class="flex flex-col items-center justify-center gap-sm p-xl">
+        <span class="material-symbols-outlined text-4xl text-[#306998]">terminal</span>
+        <div class="text-center">
+            <p class="font-medium text-on-surface text-sm">Script Python</p>
+            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.py</p>
+        </div>
+        <div class="flex gap-xs mt-xs">
+            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
+            </button>
+            <a href="codigos/problema3/analisis.py" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
+                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+            </a>
+        </div>
+    </div>
+    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
+</div>
+<div id="card-p3-r" class="border-2 border-dashed border-outline-variant rounded-lg overflow-hidden hover:border-[#276DC3] transition-all">
+    <div class="flex flex-col items-center justify-center gap-sm p-xl">
+        <span class="material-symbols-outlined text-4xl text-[#276DC3]">functions</span>
+        <div class="text-center">
+            <p class="font-medium text-on-surface text-sm">Script R</p>
+            <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">analisis.R</p>
+        </div>
+        <div class="flex gap-xs mt-xs">
+            <button class="btn-view flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[14px]">visibility</span>Ver código
+            </button>
+            <a href="codigos/problema3/analisis.R" download class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs hover:bg-surface-container transition-colors no-underline">
+                <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+            </a>
+        </div>
+    </div>
+    <pre class="hidden mx-lg mb-lg rounded-lg p-sm overflow-x-auto max-h-64 thin-scrollbar" style="background:#0f172a;color:#86efac;font-size:11px;font-family:'JetBrains Mono',monospace;line-height:1.5;"></pre>
+</div>
+<a href="imagenes/problema3/datos.xlsx" download class="flex flex-col items-center justify-center gap-sm border-2 border-dashed border-outline-variant rounded-lg p-xl hover:border-[#217346] hover:bg-[#217346]/5 transition-all no-underline text-center">
+    <span class="material-symbols-outlined text-4xl text-[#217346]">table_chart</span>
+    <div>
+        <p class="font-medium text-on-surface text-sm">Archivo Excel</p>
+        <p class="text-xs text-on-surface-variant mt-xs" style="font-family:'JetBrains Mono',monospace">datos.xlsx</p>
+    </div>
+    <span class="flex items-center gap-xs px-md py-xs rounded border border-outline text-on-surface-variant text-xs">
+        <span class="material-symbols-outlined text-[14px]">download</span>Descargar
+    </span>
+</a>
+</div>
+</section>
+</div>
+</div>
+</main>
+<script>
+    function setupCodePreview(cardId, filePath) {
+        const card = document.getElementById(cardId);
+        if (!card) return;
+        const btn = card.querySelector('.btn-view');
+        const pre = card.querySelector('pre');
+        let loaded = false;
+        let visible = false;
+
+        btn.addEventListener('click', () => {
+            if (!loaded) {
+                fetch(filePath)
+                    .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+                    .then(text => {
+                        pre.textContent = text;
+                        loaded = true;
+                        visible = true;
+                        pre.classList.remove('hidden');
+                        btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">visibility_off</span>Ocultar';
+                    })
+                    .catch(() => {
+                        pre.textContent = '⚠  Preview disponible solo desde GitHub Pages.\nAbre la página publicada para ver el código aquí.';
+                        pre.classList.remove('hidden');
+                        loaded = true;
+                        visible = true;
+                    });
+            } else {
+                visible = !visible;
+                pre.classList.toggle('hidden', !visible);
+                btn.innerHTML = visible
+                    ? '<span class="material-symbols-outlined text-[14px]">visibility_off</span>Ocultar'
+                    : '<span class="material-symbols-outlined text-[14px]">visibility</span>Ver código';
+            }
+        });
+    }
+
+    setupCodePreview('card-p1-py', 'codigos/problema1/analisis.py');
+    setupCodePreview('card-p1-r',  'codigos/problema1/analisis.R');
+    setupCodePreview('card-p2-py', 'codigos/problema2/analisis.py');
+    setupCodePreview('card-p2-r',  'codigos/problema2/analisis.R');
+    setupCodePreview('card-p3-py', 'codigos/problema3/analisis.py');
+    setupCodePreview('card-p3-r',  'codigos/problema3/analisis.R');
+</script>
+<script src="js/main.js"></script>
+</body></html>

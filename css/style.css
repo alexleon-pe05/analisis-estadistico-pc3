@@ -1,0 +1,175 @@
+/* Estilos personalizados adicionales al tema de Tailwind */
+
+/* Lightbox para imágenes del examen */
+.img-lightbox {
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.img-lightbox:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Overlay del lightbox */
+#lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+#lightbox-overlay.active {
+    display: flex;
+}
+#lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* Placeholder cuando no hay imagen */
+.img-placeholder {
+    background: #edeeef;
+    border: 2px dashed #c0c8d0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #6b7280;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    min-height: 200px;
+}
+
+/* Neutralizar los tonos rojizos del tema Material heredado */
+.text-on-surface-variant { color: #6b7280 !important; }
+.border-outline-variant   { border-color: #e2e8f0 !important; }
+.border-outline           { border-color: #cbd5e1 !important; }
+.text-on-surface-variant.dark,
+.dark .text-on-surface-variant { color: #94a3b8 !important; }
+
+/* Etiquetas de herramienta */
+.tool-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.tool-badge.python  { background: #dbeafe; color: #1e40af; }
+.tool-badge.r       { background: #d1fae5; color: #065f46; }
+.tool-badge.excel   { background: #dcfce7; color: #14532d; }
+.tool-badge.minitab { background: #ede9fe; color: #4c1d95; }
+
+/* Wrapper e icono de descarga por imagen */
+.img-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.img-download-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    border-radius: 5px;
+    padding: 2px 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 1;
+}
+.img-wrapper:hover .img-download-btn {
+    opacity: 1;
+}
+.img-download-btn .material-symbols-outlined {
+    font-size: 14px !important;
+}
+
+/* ============================================================
+   MEJORAS VISUALES — inspiradas en Cult UI (cult-ui.com)
+   Nav tipo dock, tarjetas con brillo y títulos con degradado.
+   100% compatible con el sitio HTML estático (sin React).
+   ============================================================ */
+
+/* ---- Barra de navegación: cristal esmerilado + dock ---- */
+nav.fixed {
+    background: rgba(15, 22, 38, 0.72) !important;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+}
+nav.fixed a[href$=".html"] {
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, background-color 0.2s ease;
+    will-change: transform;
+}
+/* efecto dock: el enlace bajo el cursor se eleva y crece */
+nav.fixed a[href$=".html"]:hover {
+    transform: translateY(-3px) scale(1.07);
+    box-shadow: 0 8px 20px rgba(45, 127, 212, 0.4);
+}
+
+/* ---- Tarjetas de herramientas: brillo al pasar el mouse (texture-card) ---- */
+.tool-card {
+    position: relative; overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.13);
+}
+/* Barra de acento superior por herramienta (usa variable CSS, no choca con Tailwind) */
+.tool-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent, #cbd5e1); z-index: 3; pointer-events: none;
+}
+/* Brillo diagonal al pasar el mouse (texture-card) */
+.tool-card::after {
+    content: ''; position: absolute; top: 0; left: -130%;
+    width: 55%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: skewX(-20deg); pointer-events: none; z-index: 2;
+}
+.tool-card:hover::after { animation: toolSweep 0.9s ease forwards; }
+@keyframes toolSweep { to { left: 145%; } }
+.tool-card[data-tool="excel"]   { --accent: #16a34a; }
+.tool-card[data-tool="minitab"] { --accent: #7c3aed; }
+.tool-card[data-tool="python"]  { --accent: #2563eb; }
+.tool-card[data-tool="r"]       { --accent: #0ea5e9; }
+
+/* ---- Títulos con degradado animado (gradient-heading) ---- */
+.gradient-title,
+h1.text-\[\#1a2a4a\], h2.text-\[\#1a2a4a\],
+h3.text-\[\#1a2a4a\], h4.text-\[\#1a2a4a\] {
+    background: linear-gradient(100deg, #1a2a4a 0%, #2d7fd4 45%, #4a9eff 55%, #1a2a4a 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent !important; color: transparent;
+    animation: shineTitle 7s linear infinite;
+}
+@keyframes shineTitle { to { background-position: 200% center; } }
+
+/* ---- Aparición suave al hacer scroll (motion) ---- */
+.fx-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.fx-reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+    nav.fixed a[href$=".html"], .tool-card { transition: none !important; }
+    .tool-card::after, .gradient-title { animation: none !important; }
+    .fx-reveal { opacity: 1 !important; transform: none !important; }
+}
